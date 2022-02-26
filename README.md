@@ -12,7 +12,7 @@ B.fixed metamask issue with scrolling.updated it with new path.
 C.fixed an Issue where the page gets stuck with 'tryagain'
 
 
-# Auto_Chrome
+# NFT UPLOAD AUTOMATION
  A cross platform pyhton IDE implimenting selenium 4
 
 my main link: https://linktr.ee/DrSkull
