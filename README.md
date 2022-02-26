@@ -13,7 +13,7 @@ C.fixed an Issue where the page gets stuck with 'tryagain'
 
 
 # NFT UPLOAD AUTOMATION
- A cross platform pyhton IDE implimenting selenium 4
+ A cross platform python IDE implimenting selenium 4
 
 my main link: https://linktr.ee/DrSkull
 
