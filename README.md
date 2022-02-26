@@ -24,7 +24,7 @@ or Donate below:
 
 ---
 ### Video instructions 
------> " Your Video Link" <-----
+-----> " https://youtu.be/LCLmdSBgmVU " <-----
 
 
 ### Requirements
