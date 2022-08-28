@@ -78,3 +78,4 @@ System Preferences > Security & Privacy > (Unlock the padlock if necessary) Fire
 ---
 
 Follow me on Twitter(@DrPoseidon6) and Instagram(@drskullnfts)
+Follow @Daemonrat's socials too ;)

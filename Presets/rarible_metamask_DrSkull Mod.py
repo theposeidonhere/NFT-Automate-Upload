@@ -1,5 +1,5 @@
 
-
+# Edited by @Daemonrat :)
 
 ###ATTENTION####   This Code is Only works with MetaMask and RARIB collections on the Rarible (ethereum-single)  ###ATTENTION###
 
@@ -8,17 +8,17 @@
 #####VARIABLE START####### (FILL BEFORE STARTING) ####
 
 
-start_num = 535
+start_num = 420 #the number of the first file to start from (files must be aranged numerically)
 listing_option= 'Fixed price' ### 'Timed auction' ### 'Fixed price' ###change 'Open for bids' as desired## 		
-loop_price = 0.005    		 #Please Enter Your Price here
-loop_title = "Skull #"  	 #Please Enter Your Title name here
+loop_price = 0.069    		 #Please Enter Your Price here
+loop_title = "Amazing Bananas! #"  	 #Please Enter Your Title name here
 loop_file_format = "png" 	 #Please provide your format "png" , "jpg" , "mp4"
-loop_description = "Skulls are Everywhere and will soon Lead "  #please enter your description here
+loop_description = "The Amazing Banana Collection features a variety of Amazing Banana NFTs that are sure to be Amazing! From traditional concepts to more abstract takes on the classic banana, there's something for everyone in this fun and whimsical collection. "  #please enter your description here
 minimum_bid = 0.005 #Your Minimum Bind if your listing option is 'open for bids!'
-expiration_date = "07.25.2022 2:07 PM" #Please Enter Your Expiration Date here if you have choosen 'Fixed Price'.
+expiration_date = "12.25.2022 11:59 PM" #Please Enter Your Expiration Date here if you have choosen 'Fixed Price'.
 royalties = "10"
-facebook_hashtags = "This is an #Automated Post. Hello World Nice to See You. #Testing #coder"
-twitter_hashtags = "Hello World!Nice to see You . #Hello #World #coder"
+#facebook_hashtags = "This is an #Automated Post. Hello World Nice to See You. #Testing #coder"
+#twitter_hashtags = "This is an #Automated Post. Hello World Nice to See You. #Testing #coder"
 #####VARIABLES END########
 
 
@@ -79,7 +79,7 @@ while loop_amount != 0:
 	time.sleep(1)
 	css_and_key("input[data-marker='root/appPage/create/form/nameInput']", loop_title+str(start_num))
 	time.sleep(3)
-	css_and_key("textarea[data-marker='root/appPage/create/form/descriptionInput']", loop_description)
+	css_and_key("textarea[testid='root/appPage/create/form/descriptionInput']", loop_description)
 	
 	x = wait.until(ExpectedConditions.presence_of_element_located((By.CSS_SELECTOR, "input[data-marker='root/appPage/create/form/royaltiesInput']")))
 	x.send_keys(Keys.BACKSPACE)
@@ -129,7 +129,7 @@ while loop_amount != 0:
 		pass
 		break
 			
-	css_and_click("button[class='button btn--rounded btn-primary btn--large']")
+	css_and_click("button[class='button btn--rounded btn-primary']")
 	time.sleep(1)
 	driver.switch_to.window(main_page)
 
@@ -160,7 +160,7 @@ while loop_amount != 0:
 				print("Metamask popup not found(fixed price 1), retrying...")
 		xpath_and_click('//*[@id="app-content"]/div/div[2]/div/div[3]/div[1]')    
 		print("scrolled down and clicked")
-		css_and_click("button[class='button btn--rounded btn-primary btn--large']", "waiting for second sign window...")
+		css_and_click("button[class='button btn--rounded btn-primary']", "waiting for second sign window...")
 		time.sleep(1)
 	else:  
 		while True:
@@ -195,61 +195,61 @@ while loop_amount != 0:
 			
 		time.sleep(1)
 	driver.switch_to.window(main_page)
-	xpath_and_click("//*[@id='root']/div[1]/div/div/div/div/div/div/div[3]/div/div[2]/div/div/div[1]/div/button" ,"sharing not working...")
-	while True:
-		try:
-			print("Waiting for Tweet Window popup, please wait...")
-			time.sleep(5)
-			for handle in driver.window_handles:
-				if handle != main_page:
-					twitter_page = handle
+	#xpath_and_click("//*[@id='root']/div[1]/div/div/div/div/div/div/div[3]/div/div[2]/div/div/div[1]/div/button" ,"sharing not working...")
+	#while True:
+		#try:
+			#print("Waiting for Tweet Window popup, please wait...")
+			#time.sleep(5)
+			#for handle in driver.window_handles:
+				#if handle != main_page:
+					#twitter_page = handle
 					
-			driver.switch_to.window(twitter_page)
-			print("handle is selected, "+ driver.title)
+			#driver.switch_to.window(twitter_page)
+			#print("handle is selected, "+ driver.title)
 			
-		except Exception as wtf:
-			print("Tweet button not found, retrying...")
-		try:
-			wait_for_xpath("//div[@class='r-1niwhzg r-17gur6a r-1yadl64 r-deolkf r-homxoj r-poiln3 r-7cikom r-1ny4l3l r-t60dpp r-1ttztb7']//div[@aria-label='Tweet text']")
-			textbox = driver.find_element_by_xpath("//div[@class='r-1niwhzg r-17gur6a r-1yadl64 r-deolkf r-homxoj r-poiln3 r-7cikom r-1ny4l3l r-t60dpp r-1ttztb7']//div[@aria-label='Tweet text']") #regular 
-			print("TWITTER textbox found")
-		except:
-			wait_for_xpath("//div[@role='dialog']//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//label//div//div[@dir='auto']//div//div//div//div//div[@aria-label='Tweet text']")
-			textbox = driver.find_element_by_xpath("//div[@role='dialog']//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//label//div//div[@dir='auto']//div//div//div//div//div[@aria-label='Tweet text']")
-			print(Fore.MAGENTA+"textbox alternate2 found")
+		##except Exception as wtf:
+			#print("Tweet button not found, retrying...")
+		#try:
+			#wait_for_xpath("//div[@class='r-1niwhzg r-17gur6a r-1yadl64 r-deolkf r-homxoj r-poiln3 r-7cikom r-1ny4l3l r-t60dpp r-1ttztb7']//div[@aria-label='Tweet text']")
+			#textbox = driver.find_element_by_xpath("//div[@class='r-1niwhzg r-17gur6a r-1yadl64 r-deolkf r-homxoj r-poiln3 r-7cikom r-1ny4l3l r-t60dpp r-1ttztb7']//div[@aria-label='Tweet text']") #regular 
+			#print("TWITTER textbox found")
+		#except:
+			#wait_for_xpath("//div[@role='dialog']//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//label//div//div[@dir='auto']//div//div//div//div//div[@aria-label='Tweet text']")
+			#textbox = driver.find_element_by_xpath("//div[@role='dialog']//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//div//label//div//div[@dir='auto']//div//div//div//div//div[@aria-label='Tweet text']")
+			#print(Fore.MAGENTA+"textbox alternate2 found")
 		
-		print("textbox  clicked")
-		textbox.send_keys(twitter_hashtags)
-		print("hashtags sent to textbox")
-		time.sleep(1)
-		break
-	time.sleep(1)
-	xpath_and_click("/html/body/div[1]/div/div/div[2]/main/div/div/div[2]/div/div/div/div/div[3]/div/div" ,"Tweet Button middle not Working...")  
-	print("Tweet button press successful...")					   	
-	driver.close() 
-	print("Tweet Window Successfully Closed")
-	driver.switch_to.window(main_page)
-	xpath_and_click('//*[@id="root"]/div[1]/div/div/div/div/div/div/div[3]/div/div[2]/div/div/div[2]/div/button',"facebook short xpath button not working.")
-	print("Button Found and clicked Successfully")
-	while True:
-		try:
-			print("Waiting for Facebook Window popup, please wait...")
-			time.sleep(5)
-			for handle in driver.window_handles:
-				if handle != main_page:
-					facebook_page = handle
+		#print("textbox  clicked")
+		#textbox.send_keys(twitter_hashtags)
+		#print("hashtags sent to textbox")
+		#time.sleep(1)
+		#break
+	#time.sleep(1)
+	#xpath_and_click("/html/body/div[1]/div/div/div[2]/main/div/div/div[2]/div/div/div/div/div[3]/div/div" ,"Tweet Button middle not Working...")  
+	#print("Tweet button press successful...")					   	
+	#driver.close() 
+	#print("Tweet Window Successfully Closed")
+	#driver.switch_to.window(main_page)
+	#xpath_and_click('//*[@id="root"]/div[1]/div/div/div/div/div/div/div[3]/div/div[2]/div/div/div[2]/div/button',"facebook short xpath button not working.")
+	#print("Button Found and clicked Successfully")
+	#while True:
+		#try:
+			#print("Waiting for Facebook Window popup, please wait...")
+			#time.sleep(5)
+			#for handle in driver.window_handles:
+				#if handle != main_page:
+					#facebook_page = handle
 					
-			driver.switch_to.window(facebook_page)
-			print("handle is selected, "+ driver.title)
-			break
-		except Exception as wtf:
-			print("Facebook window page not found, retrying...")
-	xpath_and_click("//textarea[@placeholder='Say something about this...']", "Typing in textbox not found...")
-	print("Typing in textbox found and clicked successfully")
-	xpath_and_key("//textarea[@placeholder='Say something about this...']", facebook_hashtags, "facebook hashtag xpath not found")
-	print("facebook hashtags entered successfully as per user defined")
-	xpath_and_click("//span[normalize-space()='Post to Facebook']", "Post to facebook  xpath not working")
-	print("post to facebook successful")
+			#driver.switch_to.window(facebook_page)
+			#print("handle is selected, "+ driver.title)
+			#break
+		#except Exception as wtf:
+			#print("Facebook window page not found, retrying...")
+	#xpath_and_click("//textarea[@placeholder='Say something about this...']", "Typing in textbox not found...")
+	#print("Typing in textbox found and clicked successfully")
+	#xpath_and_key("//textarea[@placeholder='Say something about this...']", facebook_hashtags, "facebook hashtag xpath not found")
+	#print("facebook hashtags entered successfully as per user defined")
+	#xpath_and_click("//span[normalize-space()='Post to Facebook']", "Post to facebook  xpath not working")
+	#print("post to facebook successful")
 	driver.close 
 	time.sleep(3)
 	driver.switch_to.window(main_page)   
